@@ -60,3 +60,7 @@ Route::post('hello_from_form', function (){
 Route::get('user/{id}', 'UserController@show');
 
 // Route::get('user/{id}', 'ShowProfile');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
