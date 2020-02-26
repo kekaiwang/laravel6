@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class UserController extends Controller
 {
@@ -15,6 +16,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $user = Redis::get('user:profile');
+        dd($user);
         // logging
         Log::info('showing user profile for user : ' . $id);
         Log::channel('slack')->info('Something happened!');
