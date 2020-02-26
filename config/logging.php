@@ -99,6 +99,14 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'logentries' => [
+            'driver'  => 'monolog',
+            'handler' => Monolog\Handler\SyslogUdpHandler::class,
+            'handler_with' => [
+                'host' => 'my.logentries.internal.datahubhost.company.com',
+                'port' => '10000',
+            ],
+        ],
     ],
 
 ];
