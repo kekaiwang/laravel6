@@ -16,8 +16,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        // $user = Redis::get('user:profile');
-        // dd($user);
+        Redis::set('user:profile', 23123);
+        $user = Redis::get('user:profile');
+        dd($user);
         // logging
         Log::info('showing user profile for user : ' . $id);
         Log::channel('slack')->info('Something happened!');

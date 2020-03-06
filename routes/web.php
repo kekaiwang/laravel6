@@ -31,9 +31,9 @@ Route::get('posts/{post}/comments/{comment}', function($postId, $commentId) {
     return $postId . '--' . $commentId;
 });
 
-Route::get('user/{id}', function ($id) {
-    // $id 必须是数字
-})->where('id', '[0-9]+');
+// Route::get('user/{id}', function ($id) {
+//     // $id 必须是数字
+// })->where('id', '[0-9]+');
 
 Route::middleware(['first', 'second'])->group(function () {
     Route::get('/', function () {
@@ -61,6 +61,6 @@ Route::get('user/{id}', 'UserController@show');
 
 // Route::get('user/{id}', 'ShowProfile');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
