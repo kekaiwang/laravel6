@@ -35,15 +35,15 @@ Route::get('posts/{post}/comments/{comment}', function($postId, $commentId) {
 //     // $id 必须是数字
 // })->where('id', '[0-9]+');
 
-Route::middleware(['first', 'second'])->group(function () {
-    Route::get('/', function () {
-        // Uses first & second Middleware
-    });
+// Route::middleware(['first', 'second'])->group(function () {
+//     Route::get('/', function () {
+//         // Uses first & second Middleware
+//     });
 
-    Route::get('user/profile', function () {
-        // Uses first & second Middleware
-    });
-});
+//     Route::get('user/profile', function () {
+//         // Uses first & second Middleware
+//     });
+// });
 
 Route::get('form_without_csrf_token', function (){
     return '<form method="POST" action="/hello_from_form"><button type="submit">提交</button></form>';
